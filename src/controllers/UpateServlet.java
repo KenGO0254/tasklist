@@ -51,6 +51,7 @@ public class UpateServlet extends HttpServlet {
 			//データベースの更新
 			em.getTransaction().begin();
 			em.getTransaction().commit();
+			request.getSession().setAttribute("flush", "タスク内容を更新しました！");
 			em.close();
 
 			//セッションスコープ上の不要になったデータを削除
